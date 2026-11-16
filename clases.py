@@ -70,11 +70,6 @@ class Tablero:
         
         while True: #entramos en un bucle while para validar todas las posibles opciones de disparos y posibles repeticiones de turno, ya sea por valores inválidos o por impactos en barco.
         
-            if not (0 <=fila <= self.lado and 0 <= columna <= self.lado): # se verifica que las casillas seleccionadas estén dentro del tablero. Si no lo están se indica con un print.
-                print("Casilla seleccionada fuera del tablero. Inténtelo de nuevo.")
-                break # debe haber un continue pero ahora mismo el bucle se ejecuta en infinito ya que no se cumple la condición. Pendiente de revisión
-                
-        
             if self.grid[fila, columna] == 2 or self.grid[fila, columna] == 3: # se verifica el valor de las celdas seleccionadas para comprobar si ya han sido seleccionadas previamente. Si lo han sido, se idica con un print
                 print("Esta casilla ya ha sido disparada. Seleccione otra casilla.")
                 break # debe haber un continue pero ahora mismo el bucle se ejecuta en infinito ya que no se cumple la condición. Pendiente de revisión
