@@ -29,6 +29,8 @@ class Tablero:
         self.lado = lado
         self.grid = np.zeros((lado, lado), dtype = int) # creamos cuadrícula de 10x10 con un array de NumPy con puros valores "0", correspondientes a "Agua" para comenzar la partida. 
 
+"""Actualmente el método funciona. Sin embargo, hay que comprobar cómo guardar la posición de los barcos rivales y mostrar solo agua e impactos (en barco o agua)"""
+
     def colocar_barcos(self):
         for barco, numero in self.barcos.items():
             eslora = numero["eslora"]
@@ -56,8 +58,34 @@ class Tablero:
                             if np.all(self.grid[fila: fila + eslora, columna] == 0): #se verifica que los valores asignados corresponden a casillas libres (agua = 0)
                                 self.grid[fila: fila + eslora, columna] = 1 #se reasigna el valor de esas casillas a barco = 1
                                 colocado = True #se cambia el estado de colocado de False a True para romper el bucle
-                                
-                                
+
+
+"""Actualmente el método funciona a medias. Falta determinar cómo romper el bucle infinito (cambiar el while de true a false) y como configurar el input del usuario y de la máquina."""
+
+    def recibir_disparo(self, fila: int, columna: int): # se crea el metodo recibir disparo con atributos obligatorios de fila y columna de tipo int.
+        self.fila = fila
+        self.columna = columna
+        fila = fila - 1 # se resta uno para que el calor corresponda con el índice de la posición.
+        columna = columna - 1
+        
+        while True: #entramos en un bucle while para validar todas las posibles opciones de disparos y posibles repeticiones de turno, ya sea por valores inválidos o por impactos en barco.
+        
+            if self.grid[fila, columna] == 2 or self.grid[fila, columna] == 3: # se verifica el valor de las celdas seleccionadas para comprobar si ya han sido seleccionadas previamente. Si lo han sido, se idica con un print
+                print("Esta casilla ya ha sido disparada. Seleccione otra casilla.")
+                break # debe haber un continue pero ahora mismo el bucle se ejecuta en infinito ya que no se cumple la condición. Pendiente de revisión
+        
+            if self.grid[fila,  columna] == 0: # se valida si el disparo ha caido en agua y se cambia el valor a disparo en agua.
+                self.grid[fila, columna] = 3
+                print("¡Splash! Tu disparo ha caido en agua")
+                return 
+        
+            elif self.grid[fila,  columna] == 1: # se valida si el disparo ha caido en un barco y se cambia el valor a impacto.
+                self.grid[fila, columna] = 2
+                print("¡KABOOM! ¡Impacto en barco enemigo! Vuelve a disparar.")
+                break # debe haber un continue pero ahora mismo el bucle se ejecuta en infinito ya que no se cumple la condición. Pendiente de revisión
+
+
+
 
     def mostrar_tablero(self):
         for fila in self.grid:
@@ -71,8 +99,3 @@ class Tablero:
                 elif casilla == self.fallo:
                     print(self.simbolos_tablero["Fallo"], end=" ")
             print()
-
-
-
-    # def recibir_disparo(self):
-        
