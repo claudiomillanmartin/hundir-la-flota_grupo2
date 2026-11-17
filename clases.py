@@ -73,7 +73,7 @@ class Tablero:
                 return self.grid[fila, columna]
 
 
-    def mostrar_tablero(self, mostrar_barcos == False):
+    def mostrar_tablero(self, mostrar_barcos = False):
         self.mostrar_barcos = mostrar_barcos
         
         if mostrar_barcos == True:
