@@ -92,10 +92,8 @@ class Tablero:
         if mostrar_barcos == False:
             for fila in self.grid:
                 for casilla in fila:
-                    if casilla == self.agua: #seleccionamos las casillas de acuerdo a su valor (agua, barco, impacto, fallo)
+                    if casilla == self.agua or casilla == self.barco: #seleccionamos las casillas de acuerdo a su valor (agua, barco, impacto, fallo)
                         print(self.simbolos_tablero["Agua"], end=" ") # la mostramos como el caracter seleccionado para dicho valor de casilla separado por espacios para que no haya salto de carro.
-                    elif casilla == self.barco:
-                        print(self.simbolos_tablero["Agua"], end=" ")
                     elif casilla == self.impacto:
                         print(self.simbolos_tablero["Impacto"], end=" ")
                     elif casilla == self.fallo:
