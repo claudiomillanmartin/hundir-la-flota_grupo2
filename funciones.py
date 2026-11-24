@@ -39,8 +39,8 @@ def pedir_coordenadas(tablero):
                             print(var.MSG_WRONG_INPUT)
                             continue
             
-            fila = int(partes[0].strip())
-            col = int(partes[1].strip())
+            fila = int(partes[0].strip())-1
+            col = int(partes[1].strip())-1
 
             # Verificamos que estamos dentro de los límites del tablero
             if not (0 <= fila < tablero.lado and 0 <= col < tablero.lado):
