@@ -18,32 +18,8 @@ El jugador se enfrenta a la máquina en tableros de 10x10 con los barcos colocad
 
 - **Python 3.8 o superior**
 - **NumPy**
+- **Biblioteca Keyboard**
 
-## Instalación
-
-1. Descarga o clona el proyecto y colócate en su carpeta:
-
-   ```bash
-   cd ruta/al/proyecto
-   ```
-
-2. (Opcional, recomendado) Crea y activa un entorno virtual:
-
-   ```bash
-   python -m venv venv
-
-   # Linux / macOS
-   source venv/bin/activate
-
-   # Windows
-   venv\Scripts\activate
-   ```
-
-3. Instala la dependencia:
-
-   ```bash
-   pip install numpy
-   ```
 
 ## Ejecución
 
@@ -58,10 +34,10 @@ python main.py
 ## Cómo se juega
 
 1. Al iniciar, se crean dos tableros de 10x10 (jugador y máquina) y los barcos se colocan automáticamente de forma aleatoria, en horizontal o vertical.
-2. **Empieza siempre el jugador.** En tu turno, introduce las coordenadas del disparo con el formato `fila,columna`, con valores entre `0` y `9`:
+2. **Empieza siempre el jugador.** En tu turno, introduce las coordenadas del disparo con el formato `fila,columna`, con valores entre `1` y `10`:
 
    ```
-   Introduce fila y columna separadas por coma, entre 0 y 9: 3,5
+   Introduce fila y columna separadas por coma, entre 1 y 10: 3,5
    ```
 
 3. Reglas de turno:
@@ -71,7 +47,7 @@ python main.py
 4. No se puede disparar dos veces a la misma casilla; el juego te pedirá otra.
 5. **Gana** quien hunda primero todos los barcos del rival.
 
-Las coordenadas empiezan en 0: la casilla superior izquierda es `0,0` y la inferior derecha es `9,9`. La fila es el número de línea (de arriba abajo) y la columna es la posición dentro de la línea (de izquierda a derecha).
+Las coordenadas empiezan en 1: la casilla superior izquierda es `1,1` y la inferior derecha es `10,10`. La fila es el número de línea (de arriba abajo) y la columna es la posición dentro de la línea (de izquierda a derecha).
 
 ## Flota
 
