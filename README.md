@@ -18,32 +18,8 @@ El jugador se enfrenta a la máquina en tableros de 10x10 con los barcos colocad
 
 - **Python 3.8 o superior**
 - **NumPy**
+- **Biblioteca Keyboard**
 
-## Instalación
-
-1. Descarga o clona el proyecto y colócate en su carpeta:
-
-   ```bash
-   cd ruta/al/proyecto
-   ```
-
-2. (Opcional, recomendado) Crea y activa un entorno virtual:
-
-   ```bash
-   python -m venv venv
-
-   # Linux / macOS
-   source venv/bin/activate
-
-   # Windows
-   venv\Scripts\activate
-   ```
-
-3. Instala la dependencia:
-
-   ```bash
-   pip install numpy
-   ```
 
 ## Ejecución
 
