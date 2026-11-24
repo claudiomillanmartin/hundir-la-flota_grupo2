@@ -42,7 +42,7 @@ class Tablero:
         while True: #entramos en un bucle while para validar todas las posibles opciones de disparos y posibles repeticiones de turno, ya sea por valores inválidos o por impactos en barco.
             if self.grid[fila, columna] == self.impacto or self.grid[fila, columna] == self.fallo: # se verifica el valor de las celdas seleccionadas para comprobar si ya han sido seleccionadas previamente. Si lo han sido, se idica con un print
                 print("Esta casilla ya ha sido disparada. Seleccione otra casilla.")
-                return # debe haber un continue pero ahora mismo el bucle se ejecuta en infinito ya que no se cumple la condición. Pendiente de revisión
+                return self.grid[fila, columna]# debe haber un continue pero ahora mismo el bucle se ejecuta en infinito ya que no se cumple la condición. Pendiente de revisión
             if self.grid[fila, columna] == self.agua: # se valida si el disparo ha caido en agua y se cambia el valor a disparo en agua.
                 self.grid[fila, columna] = self.fallo
                 return self.grid[fila, columna]

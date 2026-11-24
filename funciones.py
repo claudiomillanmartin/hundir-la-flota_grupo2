@@ -67,7 +67,7 @@ def disparo_maquina(tablero):
         Returns:
             int: fila y columna
     """
-    max_coord = tablero.lado - 1
+    max_coord = tablero.lado
     while True:
         fila = np.random.randint(0, max_coord)
         columna = np.random.randint(0, max_coord)
