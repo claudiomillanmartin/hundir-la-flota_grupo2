@@ -29,12 +29,12 @@ MSG_BIENVENIDA = (
     "Este proyecto ha sido realizado por el grupo 2"
 )
 MSG_ENTRADA = (
-    f"Introduce fila y columna separadas por coma, entre 0 y {TAMANO_TABLERO - 1}: "
+    f"Introduce fila y columna separadas por coma, entre 1 y {TAMANO_TABLERO}: "
 )
 # Nombre usado en funciones.py (antes MSG_ENTRADA_INVALIDA)
 MSG_WRONG_INPUT = (
-    "Entrada no válida. Debes escribir dos números enteros entre 0 y "
-    f"{TAMANO_TABLERO - 1} separados por una coma (ejemplo: 1,5)."
+    "Entrada no válida. Debes escribir dos números enteros entre 1 y "
+    f"{TAMANO_TABLERO} separados por una coma (ejemplo: 1,5)."
 )
 MSG_REPETIDO = "Ya habías disparado a esa casilla. Elige otra."
 
