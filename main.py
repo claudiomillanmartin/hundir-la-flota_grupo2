@@ -1,4 +1,3 @@
-import keyboard
 import variables as var
 from clases import Tablero
 from funciones import (
@@ -25,14 +24,22 @@ def jugar():
     #Gestion para activar el modo Demo que enseña los barcos de la maquina
     mostrar_barcos_maquina = False
 
+    while True:
+        reponse = input("Demo (s=si/n=no): ").strip().lower()
+        modo_demo_si = reponse in ["si", "s", "true", "1"]
+        modo_demo_no = reponse in ["no", "n", "false", "0"]
+        if modo_demo_si:
+            mostrar_barcos_maquina = True
+            break        
+        if modo_demo_no:
+            mostrar_barcos_maquina = False
+            break
+
     def activar_debug(): 
         nonlocal mostrar_barcos_maquina    
         mostrar_barcos_maquina = True
         print("\n[DEBUG ACTIVADO] Los barcos se mostrarán en el siguiente turno.")
-
-    
-    keyboard.add_hotkey('f1', activar_debug)
-    
+           
     turno_jugador = True  # Empieza el jugador siempre
     # 2. Bucle principal de la partida
     while True:
