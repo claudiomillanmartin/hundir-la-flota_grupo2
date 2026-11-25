@@ -73,8 +73,8 @@ def disparo_maquina(tablero):
         columna = np.random.randint(0, max_coord)
         estado_casilla = tablero.grid[fila, columna]
 
-        # Solo disparamos si la casilla es agua o barco (1 o 2) segun la clase
-        if estado_casilla < 3: 
+        # Solo disparamos si la casilla es agua o barco (0 o 1) segun la clase
+        if estado_casilla < 2: 
             return fila, columna
 
 def quedan_barcos(tablero):
