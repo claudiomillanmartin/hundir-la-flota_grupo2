@@ -18,7 +18,6 @@ El jugador se enfrenta a la máquina en tableros de 10x10 con los barcos colocad
 
 - **Python 3.8 o superior**
 - **NumPy**
-- **Biblioteca Keyboard**
 
 
 ## Ejecución
