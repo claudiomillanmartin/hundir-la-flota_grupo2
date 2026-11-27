@@ -48,7 +48,7 @@ def pedir_coordenadas(tablero):
                 continue
 
             # Verificamos que el usuario no realizo este disparo previamente
-            casilla = tablero.grid[fila,col]
+            casilla = tablero.grid_disparos[fila,col]
             if casilla > 1 : # Si la casilla esta a 2 o 3 (Impacto o fallo) es un disparo repetido
                 print(var.MSG_REPETIDO)
                 continue
@@ -71,7 +71,7 @@ def disparo_maquina(tablero):
     while True:
         fila = np.random.randint(0, max_coord)
         columna = np.random.randint(0, max_coord)
-        estado_casilla = tablero.grid[fila, columna]
+        estado_casilla = tablero.grid_disparos[fila, columna]
 
         # Solo disparamos si la casilla es agua o barco (0 o ) segun la clase
         if estado_casilla < 2: 
@@ -84,7 +84,5 @@ def quedan_barcos(tablero):
         Returns:
             Bool: True or False
     """
-    for fila in tablero.grid:
-        if tablero.barco in fila:
-            return True
-    return False
+    sin_impactar = (tablero.grid_barcos == tablero.barco) & (tablero.grid_disparos != tablero.impacto)
+    return bool(np.any(sin_impactar))
